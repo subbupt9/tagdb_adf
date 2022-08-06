@@ -1,0 +1,34 @@
+{
+	"name": "deletethetabledata",
+	"properties": {
+		"description": "using the procedure to delete the table data",
+		"activities": [
+			{
+				"name": "Stored procedure1",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.00:15:00",
+					"retry": 2,
+					"retryIntervalInSeconds": 3000,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "[dbo].[cleanthetable]"
+				},
+				"linkedServiceName": {
+					"referenceName": "AzureSqlDatabase1",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"folder": {
+			"name": "Till yesterday"
+		},
+		"annotations": [],
+		"lastPublishTime": "2022-08-03T09:38:07Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

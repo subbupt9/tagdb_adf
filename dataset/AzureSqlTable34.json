@@ -1,0 +1,65 @@
+{
+	"name": "AzureSqlTable34",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase2",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "TillYesterday"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "SalesAmount",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "TaxAmt",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "SaleDate",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "CustomerGender",
+				"type": "nvarchar"
+			},
+			{
+				"name": "CustomerOccupation",
+				"type": "nvarchar"
+			},
+			{
+				"name": "City",
+				"type": "nvarchar"
+			},
+			{
+				"name": "State",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Country",
+				"type": "nvarchar"
+			},
+			{
+				"name": "SubCategory",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Category",
+				"type": "nvarchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "Staging_FinalData"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

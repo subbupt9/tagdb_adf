@@ -1,0 +1,34 @@
+{
+	"name": "AzureSqlTable39",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "TillYesterday"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "Sno",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ColumnList",
+				"type": "nvarchar"
+			},
+			{
+				"name": "TableNameList",
+				"type": "nvarchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "Foreach.Lookuptable"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

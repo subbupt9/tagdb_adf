@@ -1,0 +1,9 @@
+{
+	"name": "AMdbdf",
+	"location": "centralindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "e3e3896b-2ba0-4700-a0ef-d137df6eef5d",
+		"tenantId": "82f159af-0b7a-48c9-a4b0-edcd3dab70f5"
+	}
+}

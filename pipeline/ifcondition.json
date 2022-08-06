@@ -1,0 +1,62 @@
+{
+	"name": "ifcondition",
+	"properties": {
+		"description": "if condition between either yes or no",
+		"activities": [
+			{
+				"name": "If Condition1",
+				"type": "IfCondition",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"expression": {
+						"value": "@bool(startswith(pipeline().parameters.Inputpipename,'01 pipeline'))",
+						"type": "Expression"
+					},
+					"ifFalseActivities": [
+						{
+							"name": "deleteandmovedata",
+							"type": "ExecutePipeline",
+							"dependsOn": [],
+							"userProperties": [],
+							"typeProperties": {
+								"pipeline": {
+									"referenceName": "deleteandmovedata",
+									"type": "PipelineReference"
+								},
+								"waitOnCompletion": true
+							}
+						}
+					],
+					"ifTrueActivities": [
+						{
+							"name": "01pipeline",
+							"type": "ExecutePipeline",
+							"dependsOn": [],
+							"userProperties": [],
+							"typeProperties": {
+								"pipeline": {
+									"referenceName": "01pipeline",
+									"type": "PipelineReference"
+								},
+								"waitOnCompletion": true
+							}
+						}
+					]
+				}
+			}
+		],
+		"parameters": {
+			"Inputpipename": {
+				"type": "string",
+				"defaultValue": "01 pipeline"
+			}
+		},
+		"folder": {
+			"name": "Till yesterday"
+		},
+		"annotations": [],
+		"lastPublishTime": "2022-08-03T09:38:10Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}
